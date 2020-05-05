@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- link local CSS -->
+    <link rel="stylesheet" href="css/Home.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">Salle De Fetes</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="http://localhost:8080/vue/login">Login
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/vue/salle.html"> Reservation des salle </a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+
+    <!-- Slide Background -->
+    <header>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <!-- Slide One - Set the background image for this slide in the line below -->
+                <div id="Back1" class="carousel-item active">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="display-4"> Evénement</h2>
+                    
+                    </div>
+                </div>
+                <!-- Slide Two - Set the background image for this slide in the line below -->
+                <div id="Back2" class="carousel-item">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="display-4"> Mariage</h2>
+                 
+                    </div>
+                </div>
+                <!-- Slide Three - Set the background image for this slide in the line below -->
+                <div id="Back3" class="carousel-item">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="display-4"> Réunion</h2>
+                       
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        
+    </header>
+    <div class="add">
+
+
+        <a href="javascript:void(0);" class="button-Addmore" data-toggle="modal"
+            data-target="#exampleModalCenter"><span>une reservation d'evenements </span></a>
+    </div>
+
+    <!-- Cards Tasks-->
+    <div class="container" style="margin-top: 100px;">
+        <div class="row" id="event">
+     
+
+
+
+        </div>
+    </div>
+
+
+    <!-- Modal Add Task -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+        <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+        <div class="modal-dialog modal-dialog-centered" role="document">
+
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Ajouter une nouvelle réservation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="txt">
+                        <input type="text" id="name" class="fadeIn second" name="name" placeholder="Name" />
+                        <input type="text" id="ville" class="fadeIn second" name="ville" placeholder="Ville" />
+                        <input type="text" id="prix" class="fadeIn third" name="prix" placeholder="prix" />
+                        <input type="text" id="nbrpersonne" class="fadeIn third" name="nbrpersonne" placeholder="Nombre de personne" />
+                        <input type="text" id="type" class="fadeIn third" name="type" placeholder="Type" />
+                        <input type="date" id="dateR" class="fadeIn third" name="dateR" placeholder="Date Reservation" />
+                    </div><br />
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="SaveData" data-dismiss="modal" class="btn btn-primary">Save
+                        changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete PopUp-->
+    <div class="modal fade" id="DeletePopUp" tabindex="-1" role="dialog" aria-labelledby="DeletePopUpTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">supprimer un reservation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="text-align: center;">
+                    <h1>Voulez-vous vraiment supprimer ces enregistrements?</h1><br />
+                    <h5> pour annulee click sur ferme</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Ferme</button>
+                    <button type="button" id="DeleteData" data-dismiss="modal" class="btn btn-primary">supprimer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Update PopUp-->
+    <div class="modal fade" id="UpdatePopUp" tabindex="-1" role="dialog" aria-labelledby="UpdatePopUpTitle"
+        aria-hidden="true">
+
+        <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+        <div class="modal-dialog modal-dialog-centered" role="document">
+
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">modifier reservation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="txt">
+                        <input type="text" id="nameUpdate" class="fadeIn second" name="nameUpdate" placeholder="Name" />
+                        <input type="text" id="villeUpdate" class="fadeIn second" name="villeUpdate" placeholder="Ville" />
+                        <input type="text" id="prixUpdate" class="fadeIn third" name="prixUpdate" placeholder="prix" />
+                        <input type="text" id="nbrpersonneUpdate" class="fadeIn third" name="nbrpresonneUpdate" placeholder="Nombre de personne" />
+                        <input type="text" id="typeUpdate" class="fadeIn third" name="typeUpdate" placeholder="Type" />
+                        <input type="date" id="dateRUpdate" class="fadeIn third" name="dateRUpdate" placeholder="Date Reservation" />
+                   
+                    </div><br />
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="SaveUpdate" data-dismiss="modal" class="btn btn-primary">Save
+                        changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-5 bg-dark">
+        <div class="container">
+          <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+        </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="../js/salle.js"></script>
+    <script src="../js/suppsalle.js"></script>
+    <script src="../js/modifiersalle.js"></script>
+</body>
+
+</html>
